@@ -1,4 +1,5 @@
 library(reticulate)
+<<<<<<< HEAD
 library(evaluate)
 library(here)
 library(rPython)
@@ -6,6 +7,13 @@ library(rPython)
 # Open python in R and load sbtab converter
 conda_create("ontox-app", python_version = "3.8")
 conda_install("ontox-app", "sbtab", pip = FALSE)
+=======
+library(here)
+
+# Open python in R and load sbtab converter
+conda_create("ontox-app", python_version = "3.8")
+conda_install("ontox-app", "sbtab", pip = TRUE)
+>>>>>>> 2304e4f (progress for xml conversion)
 use_condaenv("ontox-app", required = TRUE)
 
 # Load in file to convert
