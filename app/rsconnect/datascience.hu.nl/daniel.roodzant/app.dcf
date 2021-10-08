@@ -7,6 +7,7 @@ hostUrl: https://datascience.hu.nl/rsconnect/__api__
 appId: 124
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 bundleId: 641
 url: https://datascience.hu.nl:443/rsconnect/pmdep/
 <<<<<<< HEAD
@@ -47,5 +48,11 @@ url: https://datascience.hu.nl:443/rsconnect/pmdep/
 when: 1637660563.62594
 lastSyncTime: 1637660563.62594
 >>>>>>> 0563296 (Added help tab in the app)
+=======
+bundleId: 649
+url: https://datascience.hu.nl:443/rsconnect/pmdep/
+when: 1637764167.37394
+lastSyncTime: 1637764167.37494
+>>>>>>> 9c8d7a5 (updated help page and readme)
 asMultiple: FALSE
 asStatic: FALSE
