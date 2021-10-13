@@ -20,9 +20,9 @@ conda_install("ontox-app", "sbtab", pip = TRUE)
 use_condaenv("ontox-app", required = TRUE)
 =======
 virtualenv_create("ontox-app")
-virtualenv_install("ontox-app", "sbtab")
+virtualenv_install(envname = "ontox-app", "sbtab")
 use_virtualenv("ontox-app", required = TRUE)
 >>>>>>> 3425471 (Fixed .xml conversion and cleaned repo)
 
 # Load in file to convert
-file_test <- here::here('app', 'physmap.tsv')
+file_test <- "physmap.tsv"
