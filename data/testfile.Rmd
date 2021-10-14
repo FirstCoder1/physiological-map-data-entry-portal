@@ -12,6 +12,7 @@ library(berryFunctions)
 ```
 
 ```{r}
+<<<<<<< HEAD
 values <- list(data = list())
 for(item in table_names){
  df <- sbtab_tables_list[[item]]
@@ -20,5 +21,11 @@ for(item in table_names){
 
 output <- list("data")
 
+=======
+for(n in 1:12){
+  print(table_names[n])
+}
+table_names[1]
+>>>>>>> 6b16831 (created function for reading sbtab files)
 ```
 

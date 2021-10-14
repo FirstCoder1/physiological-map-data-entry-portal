@@ -203,6 +203,49 @@ server <- function(input, output, session) {
                  paste0(unlist(local$empty_tabs), collapse = " ")))
   })
   
+  # render dynamic table and description corresponding to tab name
+  for(n in 1:12){
+    output[[ paste0("sub_", n) ]] <- renderUI ({
+      list(
+        bsCollapsePanel("Select columns to include",
+                        checkboxGroupInput(paste0(table_names[n], "_cols"),
+                                           "Choose from:",
+                                           choices = names(sbtab_tables_list[[n]]),
+                                           selected = c("ReferenceDOI", "ID"),
+                                           inline = TRUE)
+        ),
+        tabItem(
+          tabName = table_names[n],
+          fluidRow(
+            column( 10,
+                    rHandsontableOutput(paste0(table_names[n], "_hot"), 
+                                        height = 400, 
+                                        width = "100%"),
+                    offset = 0
+            ),
+          )
+        ),
+        actionButton("goto_download", "Click here to go to the download screen" ),
+        br(), br(),
+        bsCollapsePanel("Description of table elements",
+                        DT::dataTableOutput(paste0("Description", table_names[n]), 
+                                            width = "100%")
+        )
+      )
+    })
+  }
+  
+  # make reactive dataframes out of table choices
+  for(i in 1:12){
+    df <- sbtab_tables_list[i]
+    values <- reactiveValues(data = df)
+  
+    # save hot values to reactive dataframe
+    observeEvent(input[[paste0(table_names[i], "_hot")]], {
+     values$data <- hot_to_r(input[[paste0(table_names[i], "_hot")]])
+    })
+  }
+  
   # add a tab
   observeEvent(input$add, {
     req(input$add_subitem)
@@ -220,6 +263,7 @@ server <- function(input, output, session) {
     local$choices <- local$choices[local$choices!=subitem]
     updateTabItems(session, "tabs", selected = "select_tables")
     
+<<<<<<< HEAD
     # render dynamic table and description corresponding to tab name
     output[[ paste0("sub_", subitem)]] <- renderUI ({
       list(
@@ -258,6 +302,48 @@ server <- function(input, output, session) {
     observeEvent(input[[paste0(subitem, "_hot")]], {
       values$data <- hot_to_r(input[[paste0(subitem, "_hot")]])
     })
+=======
+    # # render dynamic table and description corresponding to tab name
+    # output[[ paste0("sub_", id) ]] <- renderUI ({
+    #   list(
+    #     bsCollapsePanel("Select columns to include",
+    #       checkboxGroupInput(paste0(subitem, "_cols"),
+    #                          "Choose from:",
+    #                          choices = names(sbtab_tables_list[[subitem]]),
+    #                          selected = c("ReferenceDOI", "ID"),
+    #                          inline = TRUE)
+    #     ),
+    #     tabItem(
+    #       tabName = subitem,
+    #       fluidRow(
+    #         column( 10,
+    #           rHandsontableOutput(paste0(subitem, "_hot"), 
+    #                               height = 400, 
+    #                               width = "100%"),
+    #           offset = 0
+    #         ),
+    #       )
+    #     ),
+    #     actionButton("goto_download", "Click here to go to the download screen" ),
+    #     br(), br(),
+    #     bsCollapsePanel("Description of table elements",
+    #         DT::dataTableOutput(paste0("Description", subitem), 
+    #                             width = "100%")
+    #     )
+    #   )
+    # })
+    # 
+    # # make table a reactive dataframe
+    # for(i in sbtab_tables_list){
+    #   df <- i
+    #   values <- reactiveValues(data = df)
+    # }
+    # 
+    # # save hot values to reactive dataframe
+    # observeEvent(input[[paste0(subitem, "_hot")]], {
+    #   values$data <- hot_to_r(input[[paste0(subitem, "_hot")]])
+    # })
+>>>>>>> 6b16831 (created function for reading sbtab files)
     
     # update dynamic content in the created table
     output[[paste0(subitem, "_hot")]] <- renderRHandsontable({
