@@ -8,10 +8,10 @@ editor_options:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
-library(berryFunctions)
 ```
 
 ```{r}
+<<<<<<< HEAD
 <<<<<<< HEAD
 values <- list(data = list())
 for(item in table_names){
@@ -27,5 +27,27 @@ for(n in 1:12){
 }
 table_names[1]
 >>>>>>> 6b16831 (created function for reading sbtab files)
+=======
+# open tabs included in sbtab in the dashboard
+sbtabfile <-  suppressWarnings(read_sbtab("liver_bile_example/liver_bile_template.tsv"))
+table <- "Protein"
+empty_tabs <- as.list(table_names)
+current_tabs <- list()
+
+for(table in names(sbtabfile)){
+  headers <- append(headers,
+                    paste0('!!SBtab TableID="t_', table, '"', ' SBtabVersion="', "input$sbtab_version", '"',' Document="', "input$set_documentname", '"',' TableType="', table, '"',' TableName="', table, '"')
+        )
+}
+headernames <- vector()
+for(header in 1:length(headers)){
+  headernames <- append(headernames, table_names[which(table_names == str_extract(headers[header], table_names))])
+}
+names(headers) <- headernames
+names(sbtabfile)[2]
+for(table in names(sbtabfile)){
+empty_tabs <- empty_tabs[empty_tabs!=table]
+}
+>>>>>>> 48dc8b5 (Uploading TSV files works and opens the corresponding tabs in the app)
 ```
 
