@@ -93,7 +93,7 @@ server <- function(input, output, session) {
         actionButton("set_sbml", "Click here to continue (required)")
       ),
       bsCollapsePanel("First setup",
-        textInput("set_documentname", "Please name your document", placeholder = "Map name"),
+        textInput("set_documentname", "Please name your document", placeholder = "Documentname"),
         selectInput("sbtab_version", "Please enter which SBtab Version you need (1.0 default)", 
                     c("0.8", "0.9", "1.0"), selected = "1.0"),
         actionButton("set", "Save input")
@@ -209,9 +209,9 @@ server <- function(input, output, session) {
 
         # render dynamic table and description corresponding to tab name
         output[[paste0("sub_", table)]] <- renderUI({
-          add_tableUI(table)
+          upload_tableUI(table, sbtabfile)
         })
-
+        
         # save hot values to reactive dataframe
         observeEvent(input[[paste0(table, "_hot")]], {
           local$data[[table]] <- hot_to_r(input[[paste0(table, "_hot")]])
@@ -233,6 +233,14 @@ server <- function(input, output, session) {
         # output description table
         output[[paste0("Description", table)]] <- outputTableDescription(table)
       }
+      
+      # If table was opened previously, open filled columns
+      updateCheckboxGroupInput(session, paste0(table, "_cols"), 
+                               selected = c("ReferenceDOI", 
+                                            "ID",
+                                            "ReactionID", 
+                                            names(sbtabfile[[table]][which(sbtabfile[[table]][1,] != "")]))
+      )
     })
     names(local$headers) <- local$current_tabs
   })
@@ -345,8 +353,9 @@ server <- function(input, output, session) {
 >>>>>>> 48dc8b5 (Uploading TSV files works and opens the corresponding tabs in the app)
     # render dynamic table and description corresponding to tab name
     output[[ paste0("sub_", subitem)]] <- renderUI ({
-      add_tableUI(subitem)
+      upload_tableUI(subitem)
     })
+<<<<<<< HEAD
 <<<<<<< HEAD
     
     # make reactive dataframes out of table choices
@@ -383,6 +392,9 @@ server <- function(input, output, session) {
     # })
 
 >>>>>>> 48dc8b5 (Uploading TSV files works and opens the corresponding tabs in the app)
+=======
+    
+>>>>>>> 1025e35 (open columns get updated on file upload)
     # save hot values to reactive dataframe
     observeEvent(input[[paste0(subitem, "_hot")]], {
       values$data <- hot_to_r(input[[paste0(subitem, "_hot")]])
@@ -474,9 +486,15 @@ server <- function(input, output, session) {
   
   # write tsv and xml documents reactively
   observeEvent(local$data, {
-    req(input$set_documentname)
     documentname_set <-
-      paste0('!!!SBtab Document="', input$set_documentname, '"') %>% as.character()
+      paste0('!!!SBtab Document="', 
+             if(is_empty(input$set_documentname)){
+               "Documentname"
+               }else{
+                 input$set_documentname
+                 }, 
+             '"') %>% 
+      as.character()
     write_lines(documentname_set, file = "physmap.tsv")
     for(table in local$current_tabs){
       write_lines(local$headers[[table]], file = "physmap.tsv", append = TRUE)

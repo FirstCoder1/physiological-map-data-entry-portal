@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 !!!SBtab Document="t"
 !!SBtab TableID="t_Reaction" SBtabVersion="1.0" Document="t" TableType="Reaction" TableName="Reaction"
 !Comment	!ReferenceName	!ReferencePubMed	!ReferenceDOI	!Description	!Modifier	!Name	!Type	!Symbol	!ID	!SBML:reaction:id	!ReactionFormula	!Location	!Enzyme	!Model	!Pathway	!SubreactionOf	!IsComplete	!IsReversible	!IsInEquilibrium	!IsExchangeReaction	!Flux	!IsNonEnzymatic	!KineticLaw	!Gene	!Operon	!Enzyme:SBML:species:id	!Enzyme:SBML:parameter:id	!BuildReaction	!BuildEnzyme	!BuildEnzymeProduction	!SBOTerm	!Identifiers
@@ -47,3 +48,6 @@
 			https://doi.org/10.1016/j.livres.2017.05.001		Colon			Colon				1.0			
 >>>>>>> 48dc8b5 (Uploading TSV files works and opens the corresponding tabs in the app)
  
+=======
+!!!SBtab Document="Documentname"
+>>>>>>> 1025e35 (open columns get updated on file upload)

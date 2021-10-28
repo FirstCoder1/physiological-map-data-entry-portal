@@ -30,10 +30,15 @@ table_names[1]
 =======
 # open tabs included in sbtab in the dashboard
 sbtabfile <-  suppressWarnings(read_sbtab("liver_bile_example/liver_bile_template.tsv"))
-table <- "Protein"
+table <- "Compartment"
 empty_tabs <- as.list(table_names)
 current_tabs <- list()
+nrs <- c(1, 3, 3, 5)
 
+names(sbtabfile[[table]][which(sbtabfile[[table]][1,] != "")])
+names(sbtab_tables_list[[table]][nrs])
+
+<<<<<<< HEAD
 for(table in names(sbtabfile)){
   headers <- append(headers,
                     paste0('!!SBtab TableID="t_', table, '"', ' SBtabVersion="', "input$sbtab_version", '"',' Document="', "input$set_documentname", '"',' TableType="', table, '"',' TableName="', table, '"')
@@ -49,5 +54,7 @@ for(table in names(sbtabfile)){
 empty_tabs <- empty_tabs[empty_tabs!=table]
 }
 >>>>>>> 48dc8b5 (Uploading TSV files works and opens the corresponding tabs in the app)
+=======
+>>>>>>> 1025e35 (open columns get updated on file upload)
 ```
 
