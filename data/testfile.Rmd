@@ -34,6 +34,7 @@ table <- "Compartment"
 empty_tabs <- as.list(table_names)
 current_tabs <- list()
 nrs <- c(1, 3, 3, 5)
+<<<<<<< HEAD
 
 names(sbtabfile[[table]][which(sbtabfile[[table]][1,] != "")])
 names(sbtab_tables_list[[table]][nrs])
@@ -56,5 +57,11 @@ empty_tabs <- empty_tabs[empty_tabs!=table]
 >>>>>>> 48dc8b5 (Uploading TSV files works and opens the corresponding tabs in the app)
 =======
 >>>>>>> 1025e35 (open columns get updated on file upload)
+=======
+
+names(sbtabfile[[table]][which(sbtabfile[[table]][1,] != "")])
+names(sbtab_tables_list[[table]][nrs])
+
+>>>>>>> d864e55 (open columns get updated on file upload)
 ```
 

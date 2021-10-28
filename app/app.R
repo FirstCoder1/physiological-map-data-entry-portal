@@ -357,6 +357,7 @@ server <- function(input, output, session) {
     })
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     # make reactive dataframes out of table choices
     df <- sbtab_tables_list[[subitem]]
@@ -395,6 +396,9 @@ server <- function(input, output, session) {
 =======
     
 >>>>>>> 1025e35 (open columns get updated on file upload)
+=======
+    
+>>>>>>> d864e55 (open columns get updated on file upload)
     # save hot values to reactive dataframe
     observeEvent(input[[paste0(subitem, "_hot")]], {
       values$data <- hot_to_r(input[[paste0(subitem, "_hot")]])
