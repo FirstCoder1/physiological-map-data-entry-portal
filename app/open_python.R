@@ -25,4 +25,4 @@ use_virtualenv("ontox-app", required = TRUE)
 >>>>>>> 3425471 (Fixed .xml conversion and cleaned repo)
 
 # Load in file to convert
-file_test <- "app/physmap.tsv"
+sbtab_file <- "app/physmap.tsv"

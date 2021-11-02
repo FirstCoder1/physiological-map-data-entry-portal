@@ -13,6 +13,7 @@ library(tidyverse)
 ```{r}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 values <- list(data = list())
 for(item in table_names){
  df <- sbtab_tables_list[[item]]
@@ -63,5 +64,21 @@ names(sbtabfile[[table]][which(sbtabfile[[table]][1,] != "")])
 names(sbtab_tables_list[[table]][nrs])
 
 >>>>>>> d864e55 (open columns get updated on file upload)
+=======
+test <- read_sbtab(sbml_file)
+colnames(test[[2]])
+gsub("(^|[[:space:]])([[:alpha:]])", "\\1\\U\\2",    # Uppercase with Base R
+     colnames(test[[2]]),
+     perl = TRUE)
+str_to_upper(colnames(test[[2]]))
+colnames(test[["Compound"]])[7] <- "HasOnlySubstanceUnits"
+sbtab <- sbtab_tables_list
+x <- names(test)[1]
+sbtab[names(test)] <- lapply(names(test), function(name){
+sbtab[[name]] <- add_row(sbtab[[name]], test[[name]], .after = 0)
+})
+sbtab[["Compound"]] <- add_row(sbtab[["Compound"]], test[["Compound"]], .after = 0)
+test[["Reaction"]][]
+>>>>>>> 07ca341 (SBML uploading functional)
 ```
 
