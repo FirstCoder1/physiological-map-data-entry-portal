@@ -6,11 +6,14 @@ source(
   "open_python.R"
 )
 <<<<<<< HEAD
+<<<<<<< HEAD
 source_python(
   "sbml_to_sbtab.py"
   )
 =======
 >>>>>>> 7834f37 (continuous saving of xml working)
+=======
+>>>>>>> 1217cc9 (continuous saving of xml working)
 
 options(stringsAsFactors = FALSE)
 
