@@ -96,7 +96,8 @@ add_tableUI <- function(subitem){
         ),
       )
     ),
-    actionButton("goto_download", "Click here to go to the download screen" ),
+    actionButton(paste0("goto_download_", subitem), 
+                 "Click here to go to the download screen" ),
     br(), br(),
     bsCollapsePanel("Description of table elements",
                     DT::dataTableOutput(paste0("Description", subitem), 
@@ -130,7 +131,8 @@ upload_tableUI <- function(subitem, sbtabfile = list()){
         ),
       )
     ),
-    actionButton("goto_download", "Click here to go to the download screen" ),
+    actionButton(paste0("goto_download_", subitem),
+                 "Click here to go to the download screen" ),
     br(), br(),
     bsCollapsePanel("Description of table elements",
                     DT::dataTableOutput(paste0("Description", subitem), 

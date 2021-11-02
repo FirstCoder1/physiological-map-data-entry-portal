@@ -9,6 +9,7 @@ appId: 4706196
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 bundleId: 5126820
 url: https://ontox-pmdep.shinyapps.io/ontox-pmdep/
 when: 1633956630.31787
@@ -36,5 +37,11 @@ url: https://ontox-pmdep.shinyapps.io/ontox-pmdep/
 when: 1635780354.8996
 lastSyncTime: 1635780354.8996
 >>>>>>> 07ca341 (SBML uploading functional)
+=======
+bundleId: 5202515
+url: https://ontox-pmdep.shinyapps.io/ontox-pmdep/
+when: 1635853208.59194
+lastSyncTime: 1635853208.59194
+>>>>>>> 7834f37 (continuous saving of xml working)
 asMultiple: FALSE
 asStatic: FALSE

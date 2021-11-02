@@ -24,5 +24,5 @@ virtualenv_install(envname = "ontox-app", "sbtab")
 use_virtualenv("ontox-app", required = TRUE)
 >>>>>>> 3425471 (Fixed .xml conversion and cleaned repo)
 
-# Load in file to convert
-sbtab_file <- "app/physmap.tsv"
+# Load in converter functions
+source_python("sbtab_converters.py")

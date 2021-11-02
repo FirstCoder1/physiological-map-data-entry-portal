@@ -5,9 +5,12 @@ source(
 source(
   "open_python.R"
 )
+<<<<<<< HEAD
 source_python(
   "sbml_to_sbtab.py"
   )
+=======
+>>>>>>> 7834f37 (continuous saving of xml working)
 
 options(stringsAsFactors = FALSE)
 
@@ -102,9 +105,6 @@ server <- function(input, output, session) {
         actionButton("set", "Save input")
       ),
       bsCollapsePanel("Save and download",
-        htmlOutput("text_hot"),
-        actionButton("save_hot", "Save table"),
-        br(), br(), br(),
         htmlOutput("text_download"),
         downloadButton("download_tsv", "Download tsv"),
         downloadButton("download_xml", "Download xml")
@@ -147,11 +147,6 @@ server <- function(input, output, session) {
   observeEvent(input$set, {
     updateCollapse(session, "homescreen", open = "Save and download")
     updateTabItems(session, "tabs", selected = "select_tables")
-  })
-    
-  # Render text for setup page
-  output$text_hot <- renderText({
-    paste("<b>Press <i>Save table</i> to save your file before downloading it</b>")
   })
   
   output$text_download <- renderText({
@@ -208,8 +203,8 @@ server <- function(input, output, session) {
   
   # read input sbml to dashboard
   observeEvent(input$sbmlfile_in, {
-    open_sbml(input$sbmlfile_in$datapath)
-    local$sbtabfile <- suppressWarnings(read_sbtab(sbml_file))
+    sbml_to_sbtab(input$sbmlfile_in$datapath)
+    local$sbtabfile <- suppressWarnings(read_sbtab(sbtab_string))
     # print names of tables in the file to console
     print(paste("File", paste0("'",input$sbmlfile_in$name, "'"), "contains tabs:"))
     print(names(local$sbtabfile))
@@ -263,7 +258,7 @@ server <- function(input, output, session) {
         })
 
         # Head to save and download tab
-        observeEvent(input$goto_download, {
+        observeEvent(input[[paste0("goto_download_", table)]], {
           updateTabItems(session, "tabs", selected = "setup")
           updateCollapse(session, "homescreen", open = "Save and download")
         })
@@ -494,7 +489,7 @@ server <- function(input, output, session) {
     })
     
     # Head to save and download tab
-    observeEvent(input$goto_download, {
+    observeEvent(input[[paste0("goto_download_", subitem)]], {
       updateTabItems(session, "tabs", selected = "setup")
       updateCollapse(session, "homescreen", open = "Save and download")
     })
@@ -541,7 +536,15 @@ server <- function(input, output, session) {
       write_tsv(set_cols(local$data[[table]]), file = "physmap.tsv", col_names = TRUE, append = TRUE, na = "")
       write_lines(" ", file = "physmap.tsv", append = TRUE)
     }
-    # source_python("sbtab_to_sbml.py")
+    tryCatch({
+      sbtab_to_sbml("physmap.tsv")
+      },
+      warning = function(warn){
+        print(warn)
+      },
+      error = function(err){
+        print(err)
+      })
     })
   
   # remove a tab
@@ -573,7 +576,7 @@ server <- function(input, output, session) {
   output$download_xml <- downloadHandler(
     filename = "physmap.xml",
     content = function(file) {
-      file.copy("physmap.xml", file)
+      write_file(sbml, file)
     })
 }
 

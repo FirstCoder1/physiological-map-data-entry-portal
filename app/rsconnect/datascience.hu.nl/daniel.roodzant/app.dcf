@@ -5,8 +5,9 @@ account: daniel.roodzant
 server: datascience.hu.nl
 hostUrl: https://datascience.hu.nl/rsconnect/__api__
 appId: 124
-bundleId: 635
+bundleId: 636
 url: https://datascience.hu.nl:443/rsconnect/pmdep/
+<<<<<<< HEAD
 <<<<<<< HEAD
 when: 1635427945.81968
 lastSyncTime: 1635427945.81968
@@ -23,5 +24,9 @@ lastSyncTime: 1635410406.5115
 when: 1635780290.445
 lastSyncTime: 1635780290.445
 >>>>>>> 07ca341 (SBML uploading functional)
+=======
+when: 1635853168.23171
+lastSyncTime: 1635853168.23171
+>>>>>>> 7834f37 (continuous saving of xml working)
 asMultiple: FALSE
 asStatic: FALSE
