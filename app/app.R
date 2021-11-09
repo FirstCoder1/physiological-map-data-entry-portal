@@ -161,6 +161,7 @@ server <- function(input, output, session) {
   
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   # Open "First setup" panel after SBtab is uploaded
   observeEvent(input$set_sbtab, {
     updateCollapse(session, "homescreen", open = "First setup")
@@ -217,6 +218,8 @@ server <- function(input, output, session) {
   
 =======
 >>>>>>> f7bab8a (MINERVA map visualisation implemented and working)
+=======
+>>>>>>> 432e189 (MINERVA map visualisation implemented and working)
   # read input sbtab to dashboard
   observeEvent(input$sbtabfile_in, {
     local$sbtabfile <- suppressWarnings(read_sbtab(input$sbtabfile_in$datapath))
@@ -314,6 +317,7 @@ server <- function(input, output, session) {
   })
   
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 48dc8b5 (Uploading TSV files works and opens the corresponding tabs in the app)
   # dynamic sidebar menu #
   output$mysidebar <- renderMenu({
@@ -407,6 +411,27 @@ server <- function(input, output, session) {
   })
 
 >>>>>>> f7bab8a (MINERVA map visualisation implemented and working)
+=======
+  # Open "configure map" panel when document name is set
+  observeEvent(input$set, {
+    updateCollapse(session, "homescreen", open = "Save and download")
+    updateTabItems(session, "tabs", selected = "select_tables")
+  })
+  
+  # render select_tables
+  output$mytables <- renderUI({
+    tagList(
+      selectInput("add_subitem", "Select table to add",
+                  choices = local$choices),
+      actionButton("add", "Add"),
+      br(), br(),
+      selectInput("rm_subitem", "Select table to remove",
+                  choices = local$subitems$name),
+      actionButton("rm", "Remove")
+    )
+  })
+
+>>>>>>> 432e189 (MINERVA map visualisation implemented and working)
   # add a tab
   observeEvent(input$add, {
     req(input$add_subitem)
@@ -644,7 +669,11 @@ server <- function(input, output, session) {
   observeEvent(input$open_minerva, {
     showNotification("Please wait a few seconds for the page to load")
     source_python("minerva_upload.py")
+<<<<<<< HEAD
     #delay(2000, js$browseURL(paste0("http://localhost:8080/minerva/index.xhtml?id=", project_id)))
+=======
+    delay(2000, browseURL(paste0("http://localhost:8080/minerva/index.xhtml?id=", project_id)))
+>>>>>>> 432e189 (MINERVA map visualisation implemented and working)
   })
   
 }

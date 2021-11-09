@@ -1,4 +1,16 @@
 ## helpers to app
+<<<<<<< HEAD
+=======
+
+library(shinydashboard)
+library(shiny)
+library(data.table)
+library(rhandsontable)
+library(shinyjs)
+library(shinyBS)
+library(shinyWidgets)
+
+>>>>>>> 432e189 (MINERVA map visualisation implemented and working)
 source(
   "sbtab_tables.R"
 )

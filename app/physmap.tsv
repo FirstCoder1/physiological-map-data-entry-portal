@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 !!!SBtab Document="t"
 !!SBtab TableID="t_Reaction" SBtabVersion="1.0" Document="t" TableType="Reaction" TableName="Reaction"
 !Comment	!ReferenceName	!ReferencePubMed	!ReferenceDOI	!Description	!Modifier	!Name	!Type	!Symbol	!ID	!SBML:reaction:id	!ReactionFormula	!Location	!Enzyme	!Model	!Pathway	!SubreactionOf	!IsComplete	!IsReversible	!IsInEquilibrium	!IsExchangeReaction	!Flux	!IsNonEnzymatic	!KineticLaw	!Gene	!Operon	!Enzyme:SBML:species:id	!Enzyme:SBML:parameter:id	!BuildReaction	!BuildEnzyme	!BuildEnzymeProduction	!SBOTerm	!Identifiers
@@ -121,3 +122,6 @@
 =======
 !!!SBtab Document="Documentname"
 >>>>>>> f7bab8a (MINERVA map visualisation implemented and working)
+=======
+!!!SBtab Document="Documentname"
+>>>>>>> 432e189 (MINERVA map visualisation implemented and working)

@@ -5,6 +5,7 @@ account: daniel.roodzant
 server: datascience.hu.nl
 hostUrl: https://datascience.hu.nl/rsconnect/__api__
 appId: 124
+<<<<<<< HEAD
 bundleId: 641
 url: https://datascience.hu.nl:443/rsconnect/pmdep/
 <<<<<<< HEAD
@@ -33,5 +34,11 @@ lastSyncTime: 1635853168.23171
 when: 1636463734.95798
 lastSyncTime: 1636463734.95798
 >>>>>>> f7bab8a (MINERVA map visualisation implemented and working)
+=======
+bundleId: 640
+url: https://datascience.hu.nl:443/rsconnect/pmdep/
+when: 1636110141.36712
+lastSyncTime: 1636110141.36712
+>>>>>>> 432e189 (MINERVA map visualisation implemented and working)
 asMultiple: FALSE
 asStatic: FALSE

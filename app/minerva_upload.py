@@ -5,13 +5,20 @@
 ## Author: Piort Gawron (piotr.gawron@uni.lu)
 ## MANUAL: https://minerva.pages.uni.lu/doc/api/14.0/projects/
 ##################################################
+<<<<<<< HEAD
 import webbrowser
+=======
+
+>>>>>>> 432e189 (MINERVA map visualisation implemented and working)
 import requests
 import os
 import json
 import time
+<<<<<<< HEAD
 # import pandas
 # from io import StringIO
+=======
+>>>>>>> 432e189 (MINERVA map visualisation implemented and working)
 
 session = requests.Session()
 
@@ -30,12 +37,15 @@ print(session.cookies.get_dict(), "\n")
 if 'project_id' in locals():
   delete_project = session.delete(api_url+"/projects/"+project_id)
 
+<<<<<<< HEAD
 # # GET logs of given project
 # get_project_logs = session.get(api_url+"/projects/"+"neural"+"/logs/")
 # json = get_project_logs.json
 # data = StringIO(get_project_logs.text)
 # df = pandas.(data)
 
+=======
+>>>>>>> 432e189 (MINERVA map visualisation implemented and working)
 # UPLOAD FILE TO THE SYSTEM
 stat_info = os.stat(map_file)
 with open(map_file) as f: file_content = f.read()
@@ -73,7 +83,10 @@ print("Comment details:", create_comment_request.text)
 
 # GIVE PERMISSION to users to open the map
 grant_user_permission = session.patch(api_url+"/projects/"+project_id+":grantPrivileges", data = '[{"login":"anonymous", "privilegeType":"READ_PROJECT"}]')
+<<<<<<< HEAD
 
 # OPEN the map in the webbrowser
 time.sleep(2)
 webbrowser.open("http://localhost:8080/minerva/index.xhtml?id="+project_id)
+=======
+>>>>>>> 432e189 (MINERVA map visualisation implemented and working)
