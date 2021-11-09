@@ -5,8 +5,9 @@ account: daniel.roodzant
 server: datascience.hu.nl
 hostUrl: https://datascience.hu.nl/rsconnect/__api__
 appId: 124
-bundleId: 636
+bundleId: 641
 url: https://datascience.hu.nl:443/rsconnect/pmdep/
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 when: 1635427945.81968
@@ -28,5 +29,9 @@ lastSyncTime: 1635780290.445
 when: 1635853168.23171
 lastSyncTime: 1635853168.23171
 >>>>>>> 7834f37 (continuous saving of xml working)
+=======
+when: 1636463734.95798
+lastSyncTime: 1636463734.95798
+>>>>>>> f7bab8a (MINERVA map visualisation implemented and working)
 asMultiple: FALSE
 asStatic: FALSE
