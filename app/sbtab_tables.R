@@ -3,10 +3,15 @@
 library(tidyverse)
 library(callr)
 <<<<<<< HEAD
+<<<<<<< HEAD
 library(shinydashboard)
 library(shiny)
+=======
+>>>>>>> 0563296 (Added help tab in the app)
 library(data.table)
 library(rhandsontable)
+library(shinydashboard)
+library(shiny)
 library(shinyjs)
 library(shinyBS)
 library(shinyWidgets)

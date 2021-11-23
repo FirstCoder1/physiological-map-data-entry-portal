@@ -14,6 +14,7 @@ library(tidyverse)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 values <- list(data = list())
 for(item in table_names){
  df <- sbtab_tables_list[[item]]
@@ -88,5 +89,13 @@ test[["Reaction"]][]
 =======
 
 >>>>>>> 432e189 (MINERVA map visualisation implemented and working)
+=======
+test <- read_sbtab("liver_bile_example/liver_bile_template.tsv")
+sbtab <- sbtab_tables_list
+x <- names(test)[1]
+df <- test["Reaction"]
+sbtab[which(names(sbtab["Reaction"]) == names(test["Reaction"]))]
+sbtab[["Reaction"]] <- sbtab[["Reaction"]][FALSE,]
+>>>>>>> 0563296 (Added help tab in the app)
 ```
 

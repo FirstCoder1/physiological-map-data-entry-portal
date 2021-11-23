@@ -36,7 +36,13 @@ tab_list_ui <- function() {
         tabName = paste0("tab_", id), 
         uiOutput(paste0("sub_", id))
       )
-    })
+    }),
+    list(
+      tabItem(
+        tabName = "help",
+        uiOutput("myhelp")
+      )
+    )
   )
   # render
   do.call(tabItems, items)
