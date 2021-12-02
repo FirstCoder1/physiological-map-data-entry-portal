@@ -11,6 +11,7 @@ appId: 4706196
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 bundleId: 5126820
 url: https://ontox-pmdep.shinyapps.io/ontox-pmdep/
 when: 1633956630.31787
@@ -50,5 +51,11 @@ url: https://ontox-pmdep.shinyapps.io/ontox-pmdep/
 when: 1637764233.06245
 lastSyncTime: 1637764233.06245
 >>>>>>> 9c8d7a5 (updated help page and readme)
+=======
+bundleId: 5319812
+url: https://ontox-pmdep.shinyapps.io/ontox-pmdep/
+when: 1638462109.47764
+lastSyncTime: 1638462109.47764
+>>>>>>> 4c15329 (App contains minimal set of tables/columns)
 asMultiple: FALSE
 asStatic: FALSE

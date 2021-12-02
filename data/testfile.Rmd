@@ -15,6 +15,7 @@ library(tidyverse)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 values <- list(data = list())
 for(item in table_names){
  df <- sbtab_tables_list[[item]]
@@ -97,5 +98,20 @@ df <- test["Reaction"]
 sbtab[which(names(sbtab["Reaction"]) == names(test["Reaction"]))]
 sbtab[["Reaction"]] <- sbtab[["Reaction"]][FALSE,]
 >>>>>>> 0563296 (Added help tab in the app)
+=======
+filename <- "testfile"
+
+sbml_file <- c('<?xml version="1.0" encoding="UTF-8"?>',
+               '<sbml xmlns="http://www.sbml.org/sbml/level2/version4" xmlns:celldesigner="http://www.sbml.org/2001/ns/celldesigner" level="2" version="4">', 
+               paste0('<model metaid="', filename, '" id="', filename, '">'), 
+               '<annotation>',
+               '<celldesigner:extension>',
+               '<celldesigner:modelVersion>4.0</celldesigner:modelVersion>',
+               '<celldesigner:modelDisplay sizeX="3000" sizeY="3000"/>',
+               
+)
+
+write_lines(sbml_file, file = "test.xml")
+>>>>>>> 4c15329 (App contains minimal set of tables/columns)
 ```
 

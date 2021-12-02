@@ -8,6 +8,7 @@ appId: 124
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 bundleId: 641
 url: https://datascience.hu.nl:443/rsconnect/pmdep/
 <<<<<<< HEAD
@@ -54,5 +55,11 @@ url: https://datascience.hu.nl:443/rsconnect/pmdep/
 when: 1637764167.37394
 lastSyncTime: 1637764167.37494
 >>>>>>> 9c8d7a5 (updated help page and readme)
+=======
+bundleId: 651
+url: https://datascience.hu.nl:443/rsconnect/pmdep/
+when: 1638452459.88813
+lastSyncTime: 1638452459.88813
+>>>>>>> 4c15329 (App contains minimal set of tables/columns)
 asMultiple: FALSE
 asStatic: FALSE

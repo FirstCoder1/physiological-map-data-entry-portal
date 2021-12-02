@@ -19,7 +19,7 @@ library(shinyWidgets)
 =======
 >>>>>>> 432e189 (MINERVA map visualisation implemented and working)
 ## tables: 
-sbtab_definitions <- readr::read_tsv("https://raw.githubusercontent.com/tlubitz/SBtab/master/definition_table/definitions.tsv", 
+sbtab_definitions <- readr::read_tsv("definitions.tsv", 
                                      skip = 1, col_names = TRUE, show_col_types = FALSE
 )
 
